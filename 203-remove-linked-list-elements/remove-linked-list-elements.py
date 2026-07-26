@@ -20,8 +20,4 @@ class Solution(object):
                 temp.next=temp.next.next           
             else:
                 temp=temp.next
-        if temp:
-            if temp.val==val:
-                head=temp.next
-
         return head
