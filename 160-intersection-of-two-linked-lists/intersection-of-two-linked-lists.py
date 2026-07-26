@@ -38,3 +38,4 @@ class Solution(object):
             else:
                 temp1=temp1.next
                 temp2=temp2.next
+        return None
