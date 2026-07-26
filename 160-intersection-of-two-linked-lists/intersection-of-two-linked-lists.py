@@ -26,12 +26,10 @@ class Solution(object):
         if c1>c2:
             q=c1-c2
             for i in range(q):
-                if temp1.next:
                     temp1=temp1.next
         else:
             q=c2-c1
             for i in range(q):
-                if temp2.next:
                     temp2=temp2.next
 
         while temp1 and temp2:
