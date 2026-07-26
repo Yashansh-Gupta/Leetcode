@@ -9,19 +9,13 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        if head and head.next:
-            temp=head.next
-            prev=head
-            while temp and temp.next:
-                if temp.val==prev.val:
-                    prev.next=temp.next
-                    temp=prev.next
-                else:
-                    prev=prev.next
-                    temp=temp.next
-            if temp.next==None:
-                if temp.val==prev.val:
-                    prev.next=None
-        return head
+        curr = head
 
+        while curr and curr.next:
+            if curr.val == curr.next.val:
+                curr.next = curr.next.next
+            else:
+                curr = curr.next
+
+        return head
 
