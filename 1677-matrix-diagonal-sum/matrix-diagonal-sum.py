@@ -10,9 +10,13 @@ class Solution(object):
         s=0
         for i in range(row):
             s+=mat[i][i]
+            j = col - 1 - i
+            if i!=j:
+                s+=mat[i][j]
+
+
+
             
-            for j in range(col):
-                if j == col - 1 - i and i!=j:
-                    s+=mat[i][j]
+
 
         return s
