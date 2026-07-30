@@ -5,18 +5,12 @@ class Solution(object):
         :rtype: int
         """
         row=len(mat)
-        col=len(mat[0])
+
 
         s=0
         for i in range(row):
             s+=mat[i][i]
-            j = col - 1 - i
+            j = row - 1 - i
             if i!=j:
                 s+=mat[i][j]
-
-
-
-            
-
-
         return s
