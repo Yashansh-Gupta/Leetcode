@@ -4,11 +4,15 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        row=len(grid)
-        col=len(grid[0])
-        c=0
-        for i in range(row):
-            for j in range(col):
-                if grid[i][j]<0:
-                    c+=1
-        return c
+        rows = len(grid)
+        cols = len(grid[0])
+
+        count = 0
+
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] < 0:
+                    count += cols - j
+                    break
+
+        return count
