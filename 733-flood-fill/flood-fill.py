@@ -14,26 +14,27 @@ class Solution(object):
         old = image[sr][sc]
 
         if old == color:
-            return image
+            return image #this checks if the image is already correct
 
-        def dfs(r, c):
+        def fill(r,c):
 
-            if r < 0 or r >= rows or c < 0 or c >= cols:
-                return
+            if image[r][c]==old:
+                image[r][c]=color
+            
+                if r>0:
+                    fill(r-1,c)
+                if c>0:
+                    fill(r,c-1)
+                if r<rows-1:
+                    fill(r+1,c)
+                if c<cols-1:
+                    fill(r,c+1)
 
-            if image[r][c] != old:
-                return
-
-            image[r][c] = color
-
-            dfs(r + 1, c)
-            dfs(r - 1, c)
-            dfs(r, c + 1)
-            dfs(r, c - 1)
-
-        dfs(sr, sc)
-
+        fill(sr,sc)
         return image
+
+
+        
 
 
         
